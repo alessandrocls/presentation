@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../head.ejs %>
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+
+
+<!-- BEGIN HEADER -->
+<% include top_nav.ejs %>
+<!-- END HEADER -->
+
+
+<div class="clearfix"> </div>
+
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <% include side_nav.ejs %>
+    <!-- END SIDEBAR -->
+
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <!-- BEGIN CONTENT BODY -->
+        <div class="page-content">
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <span>Profile</span>
+                    </li>
+                </ul>
+            </div>
+
+            <h3 class="page-title">
+                Profile
+            </h3>
+
+
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                  <div class="col-sm-12">
+                      <form class="form-horizontal" role="form" action="/dashboard/profile/edit" method="post">
+                          <div class="form-body">
+                              <input type="hidden" name="id" value="<%= profile._id %>">
+                              <div class="form-group">
+                                  <label class="col-sm-4 control-label">name</label>
+                                  <div class="col-sm-4">
+                                      <input type="text" name="name" class="form-control input-inline input-large" placeholder="New name" value="<%= profile.name %>">
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label class="col-sm-4 control-label">email</label>
+                                  <div class="col-sm-4">
+                                      <input type="text" name="email" class="form-control input-inline input-large" placeholder="New email" value="<%= profile.email %>">
+                                  </div>
+                              </div>
+
+                          </div>
+                          <div class="form-actions">
+                              <div class="row">
+                                  <div class="col-sm-offset-4 col-sm-4">
+                                      <button type="submit" class="btn green">Submit</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+                </div>
+
+            </div>
+
+            <!-- END DASHBOARD STATS 1-->
+
+
+        </div>
+        <!-- END CONTENT BODY -->
+    </div>
+    <!-- END CONTENT -->
+
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<% include footer.ejs %>
+<!-- END FOOTER -->
+
+
+<% include ../script.ejs %>
+
+</body>
+</html>

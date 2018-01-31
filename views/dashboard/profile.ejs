@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../head.ejs %>
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+
+
+<!-- BEGIN HEADER -->
+<% include top_nav.ejs %>
+<!-- END HEADER -->
+
+
+<div class="clearfix"> </div>
+
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <% include side_nav.ejs %>
+    <!-- END SIDEBAR -->
+
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <!-- BEGIN CONTENT BODY -->
+        <div class="page-content">
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <span>Profile</span>
+                    </li>
+                </ul>
+            </div>
+
+            <h3 class="page-title">
+                Profile
+            </h3>
+
+
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a href="/dashboard/profile/edit" class="btn btn-warning">Edit</a>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class=" col-sm-6 col-sm-offset-3 ">
+                                    <table class="table table-user-information">
+                                        <tbody>
+                                        <tr>
+                                            <td>Username:</td>
+                                            <td><%= profile.username%></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Name:</td>
+                                            <td><%= profile.name%></td>
+                                        </tr>
+                                        <tr>
+                                            <td>email</td>
+                                            <td><%= profile.email%></td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- END DASHBOARD STATS 1-->
+
+
+        </div>
+        <!-- END CONTENT BODY -->
+    </div>
+    <!-- END CONTENT -->
+
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<% include footer.ejs %>
+<!-- END FOOTER -->
+
+
+<% include ../script.ejs %>
+
+</body>
+</html>

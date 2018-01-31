@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../head.ejs %>
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+
+
+<!-- BEGIN HEADER -->
+<% include top_nav.ejs %>
+<!-- END HEADER -->
+
+
+<div class="clearfix"> </div>
+
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <% include side_nav.ejs %>
+    <!-- END SIDEBAR -->
+
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <!-- BEGIN CONTENT BODY -->
+        <div class="page-content">
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <% include home_link.ejs %>
+                    <li>
+                        <span>Dashboard</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- END PAGE BAR -->
+            <!-- BEGIN PAGE TITLE-->
+            <h3 class="page-title">
+                Dashboard
+            </h3>
+            <!-- END PAGE TITLE-->
+            <!-- END PAGE HEADER-->
+
+
+
+
+            <!-- BEGIN DASHBOARD STATS 1-->
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <table class="table">
+                        <tr>
+                            <td>No</td>
+                            <td>Date</td>
+                            <td>Cost</td>
+                            <td>Type</td>
+                            <td>Description</td>
+                            <td>Action</td>
+                        </tr>
+
+                        <% for (var i = 0; i < data[0].transaction.length; i++) {%>
+                        <tr>
+                            <td><%= i + 1%></td>
+                            <td><%= data[0].transaction[i].date %></td>
+                            <td><%= data[0].transaction[i].cost %></td>
+                            <td><%= data[0].transaction[i].category %></td>
+                            <td><%= data[0].transaction[i].description %></td>
+                            <td><a href="/dashboard/report/delete/<%= data[0].transaction[i]._id%>" class="btn btn-danger">Delete</a></td>
+                        </tr>
+
+                        <% } %>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- END DASHBOARD STATS 1-->
+
+
+        </div>
+        <!-- END CONTENT BODY -->
+    </div>
+    <!-- END CONTENT -->
+
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<% include footer.ejs %>
+<!-- END FOOTER -->
+
+
+<% include ../script.ejs %>
+
+</body>
+</html>

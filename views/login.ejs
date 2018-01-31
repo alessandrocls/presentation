@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include head.ejs %>
+</head>
+<body>
+
+<div class="login-page">
+    <div class="container-fluid container-table">
+        <div class="row vertical-center-row">
+            <div class="col-sm-12">
+                <div class="form">
+                    <form class="register-form" action="/register" method="post">
+                        <div class="form-group-lg">
+                            <input type="text" class="form-control" name="name" placeholder="name"/>
+                        </div>
+
+                        <div class="form-group-lg">
+                            <input type="text" class="form-control" name="username" placeholder="username"/>
+                        </div>
+
+                        <div class="form-group-lg">
+                            <input type="password" class="form-control" name="password" placeholder="password"/>
+                        </div>
+
+                        <div class="form-group-lg">
+                            <input type="email" class="form-control" name="email" placeholder="email"/>
+                        </div>
+
+                        <button type="submit" class="btn btn-success text-uppercase">create</button>
+                        <p class="message">Already registered? <a href="#">Sign In</a></p>
+                    </form>
+                    <form class="login-form" action="/login" method="post">
+                        <div class="form-group-lg">
+                            <input type="text" class="form-control" name="username" placeholder="username"/>
+                        </div>
+                        <div class="form-group-lg">
+                            <input type="password" class="form-control" name="password" placeholder="password"/>
+                        </div>
+                        <button type="submit" class="btn btn-success">login</button>
+                        <p class="message">Not registered? <a href="#">Create an account</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include script.ejs %>
+
+</body>
+</html>
